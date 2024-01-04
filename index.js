@@ -12,7 +12,7 @@ const app = express();
 app.use(json());
 
 app.use("/api/auth", user);
-app.use("", notes);
+app.use("api/notes", notes);
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {

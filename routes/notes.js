@@ -14,12 +14,12 @@ import { limiter } from "../middleware/rateLimit.js";
 const router = Router();
 
 router.use(authenticateToken);
-router.post("/notes", limiter, createNote);
-router.get("/notes", limiter, getNotes);
-router.get("/notes/:id", limiter, getNoteById);
-router.put("/notes/:id", limiter, updateNote);
-router.delete("/notes/:id", limiter, deleteNote);
-router.post("/notes/:id/share", limiter, shareNote);
+router.post("/", limiter, createNote);
+router.get("/", limiter, getNotes);
+router.get("/:id", limiter, getNoteById);
+router.put("/:id", limiter, updateNote);
+router.delete("/:id", limiter, deleteNote);
+router.post("/:id/share", limiter, shareNote);
 router.get("/search", limiter, searchNotes);
 
 export default router;
